@@ -1,0 +1,19 @@
+{
+    "name": "Canvas Enhancer",
+    "description": "Add dark mode to Canvas and get color coded grades",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://umd.instructure.com/*"],
+          "js": ["injected.js"]
+        }
+    ]
+}
